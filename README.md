@@ -3,7 +3,7 @@
 **Monash Mechanical Engineering (Honours)**
 
 **Quick links**
-- 📄 [CV](#) 
+- 📄 [CV](#) [Link](CV/Liam_Davis_Resume.pdf)
 - 🔗 [LinkedIn] https://www.linkedin.com/in/liam-davis-07465b292
 - ✉️ liamdavis0404@gmail.com
 
