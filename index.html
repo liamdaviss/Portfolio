@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Liam Davis — Engineering & Energy Systems Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0f172a;
+      --muted:#475569;
+      --card:#f8fafc;
+      --border:#e2e8f0;
+      --accent:#2563eb;
+      --accent-fg:#ffffff;
+      --shadow: 0 6px 24px rgba(15,23,42,.08), 0 2px 8px rgba(15,23,42,.06);
+      --maxw: 980px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1220;
+        --fg:#e5e7eb;
+        --muted:#94a3b8;
+        --card:#111827;
+        --border:#1f2937;
+        --accent:#60a5fa;
+        --accent-fg:#0b1220;
+        --shadow: 0 6px 24px rgba(0,0,0,.5), 0 2px 8px rgba(0,0,0,.4);
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font:16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--fg); background:var(--bg);
+    }
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:32px 20px 80px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px}
+    .brand h1{margin:0; font-size:28px; letter-spacing:.2px}
+    .brand p{margin:6px 0 0; color:var(--muted)}
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-block; padding:10px 16px; border-radius:12px; border:1px solid var(--border);
+      text-decoration:none; color:var(--fg); background:transparent; transition:.2s ease;
+    }
+    .btn:hover{border-color:var(--accent); box-shadow:var(--shadow)}
+    .btn.primary{background:var(--accent); color:var(--accent-fg); border-color:transparent}
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; box-shadow:var(--shadow);
+    }
+    .content{max-width:var(--maxw); margin:0 auto}
+    .content :where(h1,h2,h3,h4){scroll-margin-top: 80px}
+    .content img{max-width:100%; height:auto; border-radius:12px; border:1px solid var(--border)}
+    .content pre{background:var(--card); padding:14px; border-radius:12px; overflow:auto; border:1px solid var(--border)}
+    .content code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .hr{height:1px; background:var(--border); margin:28px 0}
+    footer{margin-top:48px; color:var(--muted); font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <h1>Liam Davis — Engineering & Energy Systems Portfolio</h1>
+        <p>Renewable energy • Market modelling • Control & data-driven decisions</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="mailto:liamdavis0404@gmail.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/liam-davis-07465b292" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn primary" href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
+
+    <!-- README rendered here -->
+    <section id="readme" class="content card"></section>
+
+    <footer>
+      <div class="hr"></div>
+      © <span id="year"></span> Liam Davis
+    </footer>
+  </div>
+
+  <!-- Your README content (Markdown) -->
+  <script type="text/markdown" id="md-content">
+# Liam Davis - Engineering and Energy Systems Portfolio
+
+**Monash Mechanical Engineering (Honours)**
+
+**Quick links**
+- 📄 [CV](CV/Liam_Davis_Resume.pdf)
+- 🔗 [LinkedIn] https://www.linkedin.com/in/liam-davis-07465b292
+- ✉️ liamdavis0404@gmail.com
+
+## Featured Work
+
+### 1) Application of Control Theory to Cruise Control
+- What: Rigorous mathematical system analysis, with control design to optimise transient and steady state response
+- Why: Show control fundamentals applied to real system, show ability to apply challenging theoretical concept to create real world solution
+- See: [/Projects/Application-of-Control-Theory-to-Cruise-Control](/Projects/Application-of-Control-Theory-to-Cruise-Control)
+
+### 2) PHES System Design and Feasibility Study
+- What: Multi-disciplinary group report detailing and evaluating a proposed PHES project
+- Why: Demonstrates understanding of engineering projects, and the value of storage in the NEM
+- See: [/Projects/PHES-System-Design-and-Feasibility-Study](/Projects/PHES-System-Design-and-Feasibility-Study)
+
+### 3) Resonance and Excessive Deflection in Pedestrian Bridges
+- What: Technical essay analysing excessive deflection of pedestrian bridges due to resonance, and recommending mitigation strategies
+- Why: Demonstrates application of technical knowledge to practical problem solving
+- See: [/Projects/Resonance-and-Excessive-Deflection-in-Pedestrian-Bridges](/Projects/Resonance-and-Excessive-Deflection-in-Pedestrian-Bridges)
+
+### 4) Retail Net Zero Case Study
+- What: Internship Assessment case study analysing the energy usage patterns of a business, and designing a roadmap to net zero emissions through on site PV Solar and a PPA
+- Why: Demonstrates ability to integrate load analysis, PV feasibility, PPA structuring, and carbon accounting into cost-optimal decarbonisation strategies
+- See: [/Projects/Retail-Net-Zero-Case-Study](/Projects/Retail-Net-Zero-Case-Study)
+
+### 5) What the 2024 ISP implies for transmission and storage priorities in the NEM
+- What: Short written breakdown of the 2024 ISP applied to transmission and storage
+- Why: Demonstrates NEM and Energy literacy, policy understanding and ability to understand sector trends
+- See: [/Writing/ISP-NEM-Analysis](/Writing/ISP-NEM-Analysis)
+  </script>
+
+  <!-- Markdown renderer (marked.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // Render README markdown
+    const md = document.getElementById('md-content').textContent;
+    marked.setOptions({
+      breaks: true,
+      mangle: false,    // keep email addresses readable
+      headerIds: true
+    });
+    document.getElementById('readme').innerHTML = marked.parse(md);
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
