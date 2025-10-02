@@ -3,7 +3,7 @@
 **Monash Mechanical Engineering (Honours)**
 
 **Quick links**
-- 📄 [CV](#) [Link](CV/Liam_Davis_Resume.pdf)
+- 📄 [CV](CV/Liam_Davis_Resume.pdf)
 - 🔗 [LinkedIn] https://www.linkedin.com/in/liam-davis-07465b292
 - ✉️ liamdavis0404@gmail.com
 
@@ -26,7 +26,7 @@
 
 ### 4) Retail Net Zero Case Study
 - What: Internship Assessment case study analysing the energy usage patterns of a business, and designing a roadmap to net zero emissions through on site PV Solar and a PPA
-- Why: Demonstrates ability to integrate load analysis, PV feasibility, PPA structuring, and carbon accounting into cost-optimal decarbonisation strategies as an aspiring renewable energy engineer
+- Why: Demonstrates ability to integrate load analysis, PV feasibility, PPA structuring, and carbon accounting into cost-optimal decarbonisation strategies
 - See: [/Projects/Retail-Net-Zero-Case-Study](/Projects/Retail-Net-Zero-Case-Study)
 
 ### 5) NEM / ISP Analysis Series (Original writing and Data Analysis)
