@@ -6,12 +6,10 @@ This repository documents a case study completed for a **CORE Markets** internsh
 
 ## Repository contents
 
-- `CORE Markets_Intern Analyst Case Study 2025.pdf` — official task brief (problem, key considerations, and state load profiles).
-- `CORE Markets_Intern Analyst Case Study Data 2025.xlsx` — raw dataset as supplied with the brief.  
-- `CORE Markets Case Study.pptx` — my final presentation deliverable summarising analysis and recommendations.
+- `CORE_Markets_Intern_Analyst_Case_Study_2025.pdf` — official task brief (problem, key considerations, and state load profiles).
+- `CORE_Markets_Intern_Analyst_Case_Study_Data_2025.xlsx` — raw dataset as supplied with the brief.  
+- `Retail-Net-Zero-Case-Study.pptx` — my final presentation deliverable summarising analysis and recommendations.
 - `README.md` — this file.
-
-> Submission format per brief: a calculation sheet plus a concise PowerPoint deck with conclusions. 
 
 ---
 
