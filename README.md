@@ -29,7 +29,7 @@
 - Why: Demonstrates ability to integrate load analysis, PV feasibility, PPA structuring, and carbon accounting into cost-optimal decarbonisation strategies
 - See: [/Projects/Retail-Net-Zero-Case-Study](/Projects/Retail-Net-Zero-Case-Study)
 
-### 5) NEM / ISP Analysis Series (Original writing and Data Analysis)
-- What: Short, well sourced pieces on price, generation, and ISP themes
-- Why: Demonstrates NEM and Energy literacy, policy understanding and ability to analyse data
+### 5) What the 2024 ISP implies for transmission and storage priorities in the NEM
+- What: Short written breakdown of the 2024 ISP applied to transmission and storage
+- Why: Demonstrates NEM and Energy literacy, policy understanding and ability to understand sector trends
 - See: [/Writing/ISP-NEM-Analysis](/Writing/ISP-NEM-Analysis)
