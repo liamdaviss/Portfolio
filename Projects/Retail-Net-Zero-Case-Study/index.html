@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- Dynamic <base> so /foo and foo resolve to /REPO/path/foo on GitHub Pages -->
+  <!-- Set <base> to the CURRENT FOLDER so ./foo resolves correctly -->
   <script>
     (function () {
-      var path = window.location.pathname.replace(/\/+$/, '');
-      var parts = path.split('/').filter(Boolean);
-      // For project sites: /USERNAME/REPO/... ; for profile/custom domains: /
-      var baseHref = (parts.length >= 2) ? ('/' + parts[0] + '/' + parts[1] + '/') : '/';
+      var loc = window.location;
+      // directory path with trailing slash (e.g., /USER/REPO/Projects/Retail-Net-Zero-Case-Study/)
+      var dirPath = loc.pathname.endsWith('/') ? loc.pathname : loc.pathname.replace(/[^/]*$/, '');
       var base = document.createElement('base');
-      base.href = baseHref;
+      base.href = loc.origin + dirPath;
       document.head.prepend(base);
     })();
   </script>
@@ -36,12 +35,9 @@
     .brand p{margin:6px 0 0; color:var(--muted)}
     .btn{display:inline-block; padding:8px 14px; border-radius:10px; border:1px solid var(--border); text-decoration:none; color:var(--fg)}
     .btn:hover{border-color:var(--accent)}
-    .btn.primary{background:var(--accent); color:var(--accent-fg); border-color:transparent}
     .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
     .hr{height:1px; background:var(--border); margin:24px 0}
     .content :where(h1,h2,h3){scroll-margin-top:80px}
-    .content img{max-width:100%; height:auto; border-radius:12px; border:1px solid var(--border)}
-    .content pre{background:var(--card); padding:12px; border-radius:12px; overflow:auto; border:1px solid var(--border)}
     .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
     .file{display:block; padding:14px; border-radius:14px; border:1px solid var(--border); background:var(--bg); text-decoration:none; color:inherit}
     .file:hover{border-color:var(--accent); box-shadow:var(--shadow); transform:translateY(-1px)}
@@ -66,22 +62,20 @@
     <section class="card">
       <h2 style="margin-top:0">Files in this folder</h2>
       <div class="grid" id="file-grid">
-        <!-- Existing files -->
-        <a class="file" href="https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study/README.md">
+        <a class="file" href="./README.md">
           <h3>README.md</h3>
           <p>Project summary & documentation (Markdown)</p>
         </a>
-        <a class="file" href="https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study//Retail-Net-Zero-Case-Study.pptx">
+        <a class="file" href="./Retail-Net-Zero-Case-Study.pptx">
           <h3>Retail-Net-Zero-Case-Study.pptx</h3>
           <p>Final presentation deck (PowerPoint)</p>
         </a>
-        <!-- NEW: Direct links to files inside /Task -->
-        <a class="file" href="https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study//Task/CORE_Markets_Intern_Analyst_Case_Study_2025.pdf">
-          <h3>Task Outline — Brief</h3>
+        <a class="file" href="./Task/CORE_Markets_Intern_Analyst_Case_Study_2025.pdf">
+          <h3>Task — CORE_Markets_Intern_Analyst_Case_Study_2025.pdf</h3>
           <p>Official task brief (PDF)</p>
         </a>
-        <a class="file" href="https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study//Task/CORE_Markets_Intern_Analyst_Case_Study_Data_2025.xlsx">
-          <h3>Task Outline — Data</h3>
+        <a class="file" href="./Task/CORE_Markets_Intern_Analyst_Case_Study_Data_2025.xlsx">
+          <h3>Task — CORE_Markets_Intern_Analyst_Case_Study_Data_2025.xlsx</h3>
           <p>Raw dataset (Excel)</p>
         </a>
       </div>
@@ -93,7 +87,7 @@
     <section id="readme" class="content card">
       <noscript>
         <p><strong>Note:</strong> Enable JavaScript to view the rendered README. You can still open it directly:
-          <a href="https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study/README.md">README.md</a>.</p>
+          <a href="./README.md">README.md</a>.</p>
       </noscript>
     </section>
 
@@ -103,51 +97,45 @@
     </footer>
   </div>
 
-  <!-- Markdown renderer + sanitizer -->
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js" integrity="sha256-5b1J2KfQZ8dG8t6o8l1Ww6h1b0yQ2k7a4w+0mZ2aY2k=" crossorigin="anonymous"></script>
+  <!-- Markdown renderer + (optional) sanitizer -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- DOMPurify without SRI (avoids hash mismatch errors); safe fallback if it fails to load -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
 
   <script>
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Fetch and render README.md from the same folder
+    // Fetch and render README.md from THIS folder
     (async function renderReadme() {
       try {
-        const res = await fetch('https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study/README.md', { cache: 'no-store' });
-        if (!res.ok) throw new Error('README not found in this folder');
+        const res = await fetch('./README.md', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`README fetch failed: ${res.status} ${res.statusText}`);
         const md = await res.text();
         marked.setOptions({ breaks: true, mangle: false, headerIds: true });
-        const html = marked.parse(md);
-        document.getElementById('readme').innerHTML = DOMPurify.sanitize(html);
+        const rawHtml = marked.parse(md);
+        // Sanitize if DOMPurify loaded; else insert as-is
+        const safeHtml = (window.DOMPurify && DOMPurify.sanitize) ? DOMPurify.sanitize(rawHtml) : rawHtml;
+        document.getElementById('readme').innerHTML = safeHtml;
 
-        // Normalize all links in the rendered README so they resolve under /REPO/... on Pages
+        // Fix any root-leading links in the rendered README
         normalizeLinks('#readme');
       } catch (err) {
-        document.getElementById('readme').innerHTML =
-          '<p>Could not load README.md from this folder. You can open it directly: <a href="https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study/README.md">README.md</a>.</p>';
         console.error(err);
+        document.getElementById('readme').innerHTML =
+          '<p>Could not load README.md from this folder. You can open it directly: <a href="./README.md">README.md</a>.</p>';
       }
     })();
 
-    // Ensure relative and root-relative links work regardless of project/profile site
+    // Convert root-leading links (/foo) to work relative to this folder; encode spaces
     function normalizeLinks(scopeSelector) {
-      var baseHref = document.querySelector('base')?.href || (window.location.origin + '/');
-      var anchors = document.querySelectorAll(scopeSelector + ' a[href]');
-      anchors.forEach(function (a) {
+      var baseHref = document.baseURI; // current folder (thanks to <base>)
+      document.querySelectorAll(scopeSelector + ' a[href]').forEach(function (a) {
         var href = a.getAttribute('href') || '';
-        // Skip external links and hash anchors
-        if (/^[a-z]+:/i.test(href) || href.startsWith('#')) return;
-        // URL-encode spaces
+        if (/^[a-z]+:/i.test(href) || href.startsWith('#')) return; // external/mailto/hash
         href = href.replace(/ /g, '%20');
-        if (href.startsWith('/')) {
-          // Root-relative -> base + path (drop leading '/')
-          a.setAttribute('href', new URL(href.slice(1), baseHref));
-        } else {
-          // Relative -> base + relative path
-          if (href.startsWith('./')) href = href.slice(2);
-          a.setAttribute('href', new URL(href, baseHref));
-        }
+        if (href.startsWith('/')) href = href.slice(1); // drop leading slash
+        a.setAttribute('href', new URL(href, baseHref).toString());
       });
     }
   </script>
