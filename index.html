@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <script>
+    // Inject a <base> so /foo and foo resolve to /REPO/foo on project sites
+    (function () {
+        var path = window.location.pathname.replace(/\/+$/, ''); // trim trailing slash
+        var parts = path.split('/').filter(Boolean);
+        // For project sites: /USERNAME/REPO[/...]
+        // For profile sites or custom domains: /
+        var baseHref = (parts.length >= 2) ? ('/' + parts[0] + '/' + parts[1] + '/') : '/';
+        var base = document.createElement('base');
+        base.href = baseHref;
+        document.head.prepend(base);
+    })();
+    </script>
   <meta charset="utf-8" />
   <title>Liam Davis — Engineering & Energy Systems Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -130,9 +143,36 @@
       headerIds: true
     });
     document.getElementById('readme').innerHTML = marked.parse(md);
-
+    
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+  // Ensure relative links point under the site base (adds REPO segment when needed)
+  (function () {
+    var base = document.querySelector('base')?.href || window.location.origin + '/';
+    var anchors = document.querySelectorAll('#readme a[href]');
+    anchors.forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+
+      // Skip external links and anchors
+      if (/^[a-z]+:/i.test(href) || href.startsWith('#')) return;
+
+      // URL-encode spaces
+      href = href.replace(/ /g, '%20');
+
+      // Cases:
+      // 1) Root-relative: "/Projects/x" -> base + "Projects/x"
+      if (href.startsWith('/')) {
+        a.setAttribute('href', new URL(href.slice(1), base).toString());
+        return;
+      }
+
+      // 2) Relative like "./Projects/x" or "Projects/x" -> base + that path
+      if (href.startsWith('./')) href = href.slice(2);
+      a.setAttribute('href', new URL(href, base).toString());
+    });
+  })();
   </script>
 </body>
 </html>
