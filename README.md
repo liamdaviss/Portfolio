@@ -3,7 +3,7 @@
 **Monash Mechanical Engineering (Honours)**
 
 **Quick links**
-- 📄 [CV](CV/Liam_Davis_Resume.pdf)
+- 📄 [CV](/CV/Liam_Davis_Resume.pdf)
 - 🔗 [LinkedIn] https://www.linkedin.com/in/liam-davis-07465b292
 - ✉️ liamdavis0404@gmail.com
 
@@ -12,24 +12,24 @@
 ### 1) Application of Control Theory to Cruise Control
 - What: Rigorous mathematical system analysis, with control design to optimise transient and steady state response
 - Why: Show control fundamentals applied to real system, show ability to apply challenging theoretical concept to create real world solution
-- See: [Application of Control Theory to Cruise Control](Portfolio/Projects/Application-of-Control-Theory-to-Cruise-Control)
+- See: [Application of Control Theory to Cruise Control](/Projects/Application-of-Control-Theory-to-Cruise-Control)
 
 ### 2) PHES System Design and Feasibility Study
 - What: Multi-disciplinary group report detailing and evaluating a proposed PHES project
 - Why: Demonstrates understanding of engineering projects, and the value of storage in the NEM
-- See: [PHES System Design and Feasibility Study](Portfolio/Projects/PHES-System-Design-and-Feasibility-Study/PHES-System-Design-Analysis.pdf)
+- See: [PHES System Design and Feasibility Study](/Projects/PHES-System-Design-and-Feasibility-Study/PHES-System-Design-Analysis.pdf)
 
 ### 3) Resonance and Excessive Deflection in Pedestrian Bridges
 - What: Technical essay analysing excessive deflection of pedestrian bridges due to resonance, and recommending mitigation strategies
 - Why: Demonstrates application of technical knowledge to practical problem solving
-- See: [Resonance and Excessive Deflection in Pedestrian Bridges](Projects/Resonance-and-Excessive-Deflection-in-Pedestrian-Bridges)
+- See: [Resonance and Excessive Deflection in Pedestrian Bridges](/Projects/Resonance-and-Excessive-Deflection-in-Pedestrian-Bridges)
 
 ### 4) Retail Net Zero Case Study
 - What: Internship Assessment case study analysing the energy usage patterns of a business, and designing a roadmap to net zero emissions through on site PV Solar and a PPA
 - Why: Demonstrates ability to integrate load analysis, PV feasibility, PPA structuring, and carbon accounting into cost-optimal decarbonisation strategies
-- See: [Retail Net Zero Case Study](Projects/Retail-Net-Zero-Case-Study)
+- See: [Retail Net Zero Case Study](/Projects/Retail-Net-Zero-Case-Study)
 
 ### 5) What the 2024 ISP implies for transmission and storage priorities in the NEM
 - What: Short written breakdown of the 2024 ISP applied to transmission and storage
 - Why: Demonstrates NEM and Energy literacy, policy understanding and ability to understand sector trends
-- See: [ISP-NEM Analysis](Writing/ISP-NEM-Analysis)
+- See: [ISP-NEM Analysis](/Writing/ISP-NEM-Analysis)
