@@ -12,12 +12,12 @@
 ### 1) Application of Control Theory to Cruise Control
 - What: Rigorous mathematical system analysis, with control design to optimise transient and steady state response
 - Why: Show control fundamentals applied to real system, show ability to apply challenging theoretical concept to create real world solution
-- See: [Application of Control Theory to Cruise Control](Projects/Application-of-Control-Theory-to-Cruise-Control)
+- See: [Application of Control Theory to Cruise Control](Portfolio/Projects/Application-of-Control-Theory-to-Cruise-Control)
 
 ### 2) PHES System Design and Feasibility Study
 - What: Multi-disciplinary group report detailing and evaluating a proposed PHES project
 - Why: Demonstrates understanding of engineering projects, and the value of storage in the NEM
-- See: [PHES System Design and Feasibility Study](Projects/PHES-System-Design-and-Feasibility-Study)
+- See: [PHES System Design and Feasibility Study](Portfolio/Projects/PHES-System-Design-and-Feasibility-Study/PHES-System-Design-Analysis.pdf)
 
 ### 3) Resonance and Excessive Deflection in Pedestrian Bridges
 - What: Technical essay analysing excessive deflection of pedestrian bridges due to resonance, and recommending mitigation strategies
