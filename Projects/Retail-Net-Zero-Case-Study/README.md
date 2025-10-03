@@ -69,8 +69,8 @@ This repository documents a case study completed for a **CORE Markets** internsh
 
 ## How to navigate this repo
 
-1. Read the **brief** (`CORE Markets_Intern Analyst Case Study 2025.pdf`) for scope, objectives, and load assumptions.
-2. Inspect the **raw dataset** (`CORE Markets_Intern Analyst Case Study Data 2025.xlsx`) that underpins the analysis.  
+1. Read the **brief** for scope, objectives, and load assumptions.
+2. Inspect the **raw dataset** that underpins the analysis.  
 3. Open the **presentation** (`CORE Markets Case Study.pptx`) for the results, charts, and recommendations. 
 
 ---
