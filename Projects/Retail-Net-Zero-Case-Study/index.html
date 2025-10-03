@@ -114,7 +114,7 @@
     // Fetch and render README.md from the same folder
     (async function renderReadme() {
       try {
-        const res = await fetch('./README.md', { cache: 'no-store' });
+        const res = await fetch('https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study/README.md', { cache: 'no-store' });
         if (!res.ok) throw new Error('README not found in this folder');
         const md = await res.text();
         marked.setOptions({ breaks: true, mangle: false, headerIds: true });
@@ -125,7 +125,7 @@
         normalizeLinks('#readme');
       } catch (err) {
         document.getElementById('readme').innerHTML =
-          '<p>Could not load README.md from this folder. You can open it directly: <a href="./README.md">README.md</a>.</p>';
+          '<p>Could not load README.md from this folder. You can open it directly: <a href="https://liamdaviss.github.io/Portfolio/Projects/Retail-Net-Zero-Case-Study/README.md">README.md</a>.</p>';
         console.error(err);
       }
     })();
